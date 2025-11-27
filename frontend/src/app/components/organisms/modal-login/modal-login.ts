@@ -1,4 +1,5 @@
 import { Component, output } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-modal-login',
@@ -16,6 +17,8 @@ export class ModalLogin {
 
   onClose = output();
 
+  constructor(private router: Router) {}
+
   // Este método emite un evento que el AppComponent captura
   closeModal(): void {
     this.onClose.emit();
@@ -23,6 +26,7 @@ export class ModalLogin {
 
   login():void{
     this.onModalClick.emit();
+    this.router.navigate(['/dashboard']);
   }
 
   openVolunteerRegister():void{
@@ -32,5 +36,6 @@ export class ModalLogin {
   openOrgRegister():void{
     this.onRegisterOrgClick.emit();
   }
+
 
 }

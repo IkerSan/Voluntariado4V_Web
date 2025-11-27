@@ -1,2 +1,9 @@
-<h2 class="fs-4 fw-bold mb-4">Dashboard Principal</h2>
-<div class="alert alert-info">Contenido de resumen del Dashboard aquí.</div>
+<div class="wrapper">
+    <app-sidebar></app-sidebar>
+    <div class="content">
+        <app-navbar></app-navbar>
+        <div class="container-fluid p-4" id="mainContentArea">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>
