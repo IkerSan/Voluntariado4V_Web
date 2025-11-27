@@ -3,35 +3,21 @@
 
 /* Variables CSS para los colores principales */
 :root {
-    --color-cuatrovientos-main-blue: #1A467B; 
-    --color-cuatrovientos-light-blue: #4299E1;
-    --color-cuatrovientos-dark-bg: #0F172A;
-    --color-cuatrovientos-gray-text: #E2E8F0;
-    --color-white: #FFFFFF;
-    --color-light-gray-bg: #F8FAFC;
+  --color-cuatrovientos-main-blue: #1a467b;
+  --color-cuatrovientos-light-blue: #4299e1;
+  --color-cuatrovientos-dark-bg: #0f172a;
+  --color-cuatrovientos-gray-text: #e2e8f0;
+  --color-white: #ffffff;
+  --color-light-gray-bg: #f8fafc;
 }
 
 body {
-    font-family: 'Inter', sans-serif;
-    background-color: var(--color-light-gray-bg);
-    color: #333;
-    overflow-x: hidden;
+  font-family: 'Inter', sans-serif;
+  background-color: var(--color-light-gray-bg);
+  color: #333;
+  overflow-x: hidden;
 }
 
-/* ⚠️ Importar Bootstrap DEBE ir ANTES de tus reglas personalizadas ⚠️ */
-@import 'bootstrap/dist/css/bootstrap.css';
-
-/* Configuración de Tailwind para extender con los colores de Cuatrovientos */
-@layer base {
-  :root {
-    --tw-cuatro-main-blue: var(--color-cuatrovientos-main-blue);
-    --tw-cuatro-light-blue: var(--color-cuatrovientos-light-blue);
-    --tw-cuatro-dark-bg: var(--color-cuatrovientos-dark-bg);
-    --tw-cuatro-gray-text: var(--color-cuatrovientos-gray-text);
-    --tw-white: var(--color-white);
-    --tw-light-gray-bg: var(--color-light-gray-bg);
-  }
-}
 
 /* Estilos base del logo */
 .cuatrovientos-logo-header {
@@ -203,98 +189,95 @@ body {
 
 /* Estilos para el footer */
 .hover-light-blue:hover {
-    color: var(--color-cuatrovientos-light-blue) !important;
+  color: var(--color-cuatrovientos-light-blue) !important;
 }
 
 .hover-white:hover {
-    color: var(--color-white) !important;
+  color: var(--color-white) !important;
 }
 
 /* Clases de texto/enlaces en el footer */
 .text-cuatro-gray-text {
-    color: var(--color-cuatrovientos-gray-text) !important;
+  color: var(--color-cuatrovientos-gray-text) !important;
 }
 
-/* Utilidad para iconos si no usas Tailwind */
 .icon-24 {
-    width: 24px;
-    height: 24px;
+  width: 24px;
+  height: 24px;
 }
 
 /* Color de fondo principal del footer */
 .bg-cuatro-dark-bg {
-    background-color: var(--color-cuatrovientos-dark-bg) !important;
+  background-color: var(--color-cuatrovientos-dark-bg) !important;
 }
-
-/* src/styles.scss */
 
 /* Estilos para las tarjetas de áreas de impacto */
 .impact-card {
-    background-color: var(--color-white);
-    color: #333;
-    /* Línea azul inferior */
-    border-bottom: 4px solid var(--color-cuatrovientos-main-blue);
-    /* Transiciones para el efecto hover */
-    transition: transform 0.2s, box-shadow 0.2s;
+  background-color: var(--color-white);
+  color: #333;
+  /* Línea azul inferior */
+  border-bottom: 4px solid var(--color-cuatrovientos-main-blue);
+  /* Transiciones para el efecto hover */
+  transition: transform 0.2s, box-shadow 0.2s;
 }
 
 /* Efecto Hover: Levantar la tarjeta y añadir sombra */
 .impact-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 /* Color de los iconos SVG dentro de la tarjeta */
 .impact-card svg {
-    color: var(--color-cuatrovientos-main-blue);
+  color: var(--color-cuatrovientos-main-blue);
 }
 
 /* Clase de utilidad para el tamaño de los iconos (si es necesario) */
 .icon-40 {
-    width: 40px;
-    height: 40px;
+  width: 40px;
+  height: 40px;
 }
 
 /* En src/styles.scss */
 .font-max-bold {
-    /* Corresponde a font-extrabold en Tailwind */
-    font-weight: 800 !important; 
-    /* Si quieres el peso MÁXIMO, usa 900 */
-    /* font-weight: 900 !important; */
+  /* Corresponde a font-extrabold en Tailwind */
+  font-weight: 800 !important;
+  /* Si quieres el peso MÁXIMO, usa 900 */
+  /* font-weight: 900 !important; */
 }
 /* src/styles.scss (Añadir para los estilos exactos del modal) */
 
 /* Estilos para los Inputs con Ícono */
 .custom-input-group .custom-icon-span {
-    background-color: white;
-    border-right: none;
-    border-color: #ced4da; /* Color gris estándar de Bootstrap */
-    color: #a0aec0; /* Color del icono */
+  background-color: white;
+  border-right: none;
+  border-color: #ced4da; /* Color gris estándar de Bootstrap */
+  color: #a0aec0; /* Color del icono */
 }
 
 /* Foco del Input: Quitar el azul por defecto de Bootstrap y poner el color de Cuatrovientos */
 .custom-input-group .form-control:focus {
-    border-color: var(--color-cuatrovientos-main-blue) !important;
-    box-shadow: 0 0 0 0.25rem rgba(26, 70, 123, 0.25) !important; /* Usar el RGB del azul principal con transparencia */
+  border-color: var(--color-cuatrovientos-main-blue) !important;
+  box-shadow: 0 0 0 0.25rem rgba(26, 70, 123, 0.25) !important; /* Usar el RGB del azul principal con transparencia */
 }
 
 /* Esconder el fondo del input group en focus */
 .custom-input-group .form-control {
-    border-left: none;
+  border-left: none;
 }
 
 /* Estilo del Botón Sign In (Blanco con Sombra) */
 .custom-sign-in-btn {
-    background-color: white;
-    color: #333;
-    border: 1px solid #ced4da;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
-    transition: background-color 0.15s ease-in-out;
+  background-color: white;
+  color: #333;
+  border: 1px solid #ced4da;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  transition: background-color 0.15s ease-in-out;
 }
 
 .custom-sign-in-btn:hover {
-    background-color: #f8f9fa; /* Gris muy claro al pasar el ratón */
-    border-color: #ced4da;
+  background-color: #f8f9fa; /* Gris muy claro al pasar el ratón */
+  border-color: #ced4da;
 }
 
 /* src/styles.scss */
@@ -304,19 +287,19 @@ body {
 /* ---------------------------------------------------- */
 
 .modal-overlay-container {
-    /* Clases de Bootstrap/Tailwind: fixed inset-0 */
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    /* Asegura que el contenido esté centrado si no usamos d-flex */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
-    background-color: rgba(0, 0, 0, 0.5); /* Color de fondo del overlay */
-    z-index: 1050; /* Z-index alto */
+  /* Clases de Bootstrap/Tailwind: fixed inset-0 */
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  /* Asegura que el contenido esté centrado si no usamos d-flex */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: rgba(0, 0, 0, 0.5); /* Color de fondo del overlay */
+  z-index: 1050; /* Z-index alto */
 }
 
 /* ---------------------------------------------------- */
@@ -324,19 +307,18 @@ body {
 /* ---------------------------------------------------- */
 
 #basic-modal-content {
-    /* Tamaño fijo y centrado sobre el overlay */
-    max-width: 1250px;
-    width: 100%;
-    
-    /* Apariencia */
-    background-color: #FFFFFF;
-    border-radius: 0.5rem; /* rounded-3 */
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.5); /* Sombra fuerte */
-    
-    /* Asegura que flote sobre el overlay, aunque d-flex ya lo hace */
-    position: relative; 
-}
+  /* Tamaño fijo y centrado sobre el overlay */
+  max-width: 1250px;
+  width: 100%;
 
+  /* Apariencia */
+  background-color: #ffffff;
+  border-radius: 0.5rem; /* rounded-3 */
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.5); /* Sombra fuerte */
+
+  /* Asegura que flote sobre el overlay, aunque d-flex ya lo hace */
+  position: relative;
+}
 
 /* ---------------------------------------------------- */
 /* 3. ESTILOS DE FOCO Y BOTONES (Los elementos que fallan) */
@@ -344,25 +326,44 @@ body {
 
 /* Foco de Input: El azul oscuro de Cuatrovientos (#1A467B) */
 .form-control:focus {
-    /* El valor que tú quieres es el azul oscuro principal */
-    border-color: #1A467B !important; 
-    
-    /* Sombra de foco (Glow) usando el azul oscuro */
-    box-shadow: 0 0 0 0.25rem rgba(26, 70, 123, 0.25) !important; 
+  /* El valor que tú quieres es el azul oscuro principal */
+  border-color: #1a467b !important;
+
+  /* Sombra de foco (Glow) usando el azul oscuro */
+  box-shadow: 0 0 0 0.25rem rgba(26, 70, 123, 0.25) !important;
 }
 
 /* Botón de Sign In (Para que quede blanco, redondeado y con borde sutil) */
 .custom-sign-in-btn {
-    /* Estilo del botón */
-    background-color: white;
-    color: #333;
-    border: 1px solid #ced4da;
-    border-radius: 50rem; /* rounded-pill */
-    font-weight: bold;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-    
-    /* Arrow */
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  /* Estilo del botón */
+  background-color: white;
+  color: #333;
+  border: 1px solid #ced4da;
+  border-radius: 50rem; /* rounded-pill */
+  font-weight: bold;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+
+  /* Arrow */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.concentric-target-graphic {
+  position: absolute;
+  right: 15%;
+  top: 50%;
+  width: 300px;
+  height: 300px;
+  color: var(--bs-cuatro-light-blue);
+  z-index: 0;
+  animation: pulse-target 3s infinite ease-in-out;
+}
+.concentric-target-graphic {
+  left: 50%;
+  right: auto;
+  top: 80%;
+  transform: translateX(-50%) scale(0.7);
+  width: 250px;
+  height: 250px;
 }

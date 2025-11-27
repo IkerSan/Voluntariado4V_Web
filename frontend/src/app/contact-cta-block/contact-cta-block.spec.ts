@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BotonAccion } from './boton-accion';
+import { ContactCtaBlock } from './contact-cta-block';
 
-describe('BotonAccion', () => {
-  let component: BotonAccion;
-  let fixture: ComponentFixture<BotonAccion>;
+describe('ContactCtaBlock', () => {
+  let component: ContactCtaBlock;
+  let fixture: ComponentFixture<ContactCtaBlock>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [BotonAccion]
+      imports: [ContactCtaBlock]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(BotonAccion);
+    fixture = TestBed.createComponent(ContactCtaBlock);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BotonBasico } from './boton-basico';
+import { HeroSection } from './hero-section';
 
-describe('BotonBasico', () => {
-  let component: BotonBasico;
-  let fixture: ComponentFixture<BotonBasico>;
+describe('HeroSection', () => {
+  let component: HeroSection;
+  let fixture: ComponentFixture<HeroSection>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [BotonBasico]
+      imports: [HeroSection]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(BotonBasico);
+    fixture = TestBed.createComponent(HeroSection);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
