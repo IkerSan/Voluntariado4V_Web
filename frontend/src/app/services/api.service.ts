@@ -14,4 +14,8 @@ export class ApiService {
   getUsuarios(): Observable<any[]> {
     return this.http.get<any[]>(`${this.apiUrl}/usuarios`);
   }
+
+  getVolunteers(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.apiUrl}/volunteers`);
+  }
 }
