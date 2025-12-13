@@ -58,6 +58,10 @@ class Volunteer
     #[Assert\Length(min: 9, max: 9)]
     private ?string $DNI = null;
 
+    #[ORM\Column(length: 255)]
+    #[Assert\NotBlank]
+    private ?string $PASSWORD = null;
+
     #[ORM\Column(length: 10)]
     #[Assert\Choice(choices: ['ACTIVO', 'SUSPENDIDO', 'PENDIENTE'])]
     private ?string $ESTADO = 'PENDIENTE';
@@ -118,7 +122,8 @@ class Volunteer
 
     public function setTELEFONO(string $TELEFONO): static
     {
-        $this->TELEFONO = $TELEFONO;
+        // Sanitize: remove all non-numeric characters
+        $this->TELEFONO = preg_replace('/\D/', '', $TELEFONO);
         return $this;
     }
 
@@ -163,6 +168,17 @@ class Volunteer
     public function setDNI(string $DNI): static
     {
         $this->DNI = $DNI;
+        return $this;
+    }
+
+    public function getPASSWORD(): ?string
+    {
+        return $this->PASSWORD;
+    }
+
+    public function setPASSWORD(string $PASSWORD): static
+    {
+        $this->PASSWORD = $PASSWORD;
         return $this;
     }
 
