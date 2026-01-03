@@ -37,7 +37,13 @@ export class ModalLogin {
         console.log('Login successful', response);
         localStorage.setItem('user', JSON.stringify(response));
         this.onModalClick.emit();
-        this.router.navigate(['/dashboard']);
+        if (response.role === 'volunteer') {
+          this.router.navigate(['/volunteer-dashboard']);
+        } else if (response.role === 'organization') {
+          this.router.navigate(['/organization-dashboard']);
+        } else {
+          this.router.navigate(['/dashboard']);
+        }
         this.closeModal();
       },
       error: (error) => {

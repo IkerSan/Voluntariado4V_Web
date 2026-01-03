@@ -13,7 +13,7 @@ class Volunteer
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
-    #[ORM\Column]
+    #[ORM\Column(name: 'CODVOL')]
     private ?int $CODVOL = null;
 
     #[ORM\Column(length: 30)]
@@ -65,6 +65,14 @@ class Volunteer
     #[ORM\Column(length: 10)]
     #[Assert\Choice(choices: ['ACTIVO', 'SUSPENDIDO', 'PENDIENTE'])]
     private ?string $ESTADO = 'PENDIENTE';
+
+    #[ORM\ManyToMany(targetEntity: Actividad::class, mappedBy: 'voluntarios')]
+    private $actividades;
+
+    public function __construct()
+    {
+        $this->actividades = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
     public function getCODVOL(): ?int
     {
@@ -190,6 +198,31 @@ class Volunteer
     public function setESTADO(string $ESTADO): static
     {
         $this->ESTADO = $ESTADO;
+        return $this;
+    }
+
+    /**
+     * @return \Doctrine\Common\Collections\Collection<int, Actividad>
+     */
+    public function getActividades(): \Doctrine\Common\Collections\Collection
+    {
+        return $this->actividades;
+    }
+
+    public function addActividad(Actividad $actividad): static
+    {
+        if (!$this->actividades->contains($actividad)) {
+            $this->actividades->add($actividad);
+            $actividad->addVoluntario($this);
+        }
+        return $this;
+    }
+
+    public function removeActividad(Actividad $actividad): static
+    {
+        if ($this->actividades->removeElement($actividad)) {
+            $actividad->removeVoluntario($this);
+        }
         return $this;
     }
 }

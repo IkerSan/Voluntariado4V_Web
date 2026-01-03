@@ -59,4 +59,12 @@ export class ApiService {
   registerOrganization(org: any): Observable<any> {
     return this.http.post<any>(`${this.apiUrl}/organizations`, org);
   }
+
+  signUpForActivity(activityId: number, volunteerId: number): Observable<any> {
+    return this.http.post<any>(`${this.apiUrl}/activities/${activityId}/signup`, { volunteerId });
+  }
+
+  getActivityVolunteers(activityId: number): Observable<any[]> {
+    return this.http.get<any[]>(`${this.apiUrl}/activities/${activityId}/volunteers`);
+  }
 }
